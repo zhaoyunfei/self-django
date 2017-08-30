@@ -6,6 +6,6 @@ from . import views
 
 app_name = 'web'
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    # url(r'^$', views.IndexView.as_view(), name='index'),
+    # url(r'^$', views.index, name='index'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
 ]

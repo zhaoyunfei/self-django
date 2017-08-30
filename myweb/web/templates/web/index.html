@@ -1,3 +1,229 @@
-{% include 'master.html' %}
+{% include 'index.html' %}
+{% load static %}
 
-<h1>wregthrytju</h1>
+<body class=home-template>
+    <header class="site-header">
+        <nav class="navbar navbar-static-top main-navbar" id=top>
+            <div class=container>
+                <div class=navbar-header>
+                    <button class="navbar-toggle collapsed" type=button data-toggle=collapse data-target=#bs-navbar
+                            aria-controls=bs-navbar aria-expanded=false>
+                        <span class=sr-only>Toggle navigation</span>
+                        <span class=icon-bar></span>
+                        <span class=icon-bar></span>
+                        <span class=icon-bar></span>
+                    </button>
+                    <a href="/" class="navbar-brand">还没名网站</a>
+                </div>
+                <nav id=bs-navbar class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/api/" target=_blank>登录/注册</a></li>
+                        <li><a href="/about/">关于</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+        <div class="container jumbotron">
+            <div class=row>
+                <div class=col-xs-12>
+                    <h1>还没名网站</h1>
+                    <p>获取最新文章<br><span class=package-amount>共收录了 <strong>3107</strong> 个文章</span></p>
+                    <div class=search-wraper role=search>
+                        <div class=form-group>
+                            <input class="form-control search clearable" placeholder="just do it"
+                                   autocomplete=off autofocus tabindex=0 autocorrect=off
+                                   autocapitalize=off spellcheck=false>
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mostused-packages well well-sm text-center hidden-xs hidden-sm">
+            <ul class="list-inline">
+                <li><a href="#">好玩推荐</a></li>
+                <li><a href="#">教学栏</a></li>
+                <li><a href="#">黑科技</a></li>
+                <li><a href="#">新事物</a></li>
+                <li><a href="#">怀旧向</a></li>
+                <li><a href="#">工具集</a></li>
+                <li><a href="#">工具集</a></li>
+                <li><a href="#">工具集</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class=packages-list-container id=all-packages>
+        <div class=container>
+            <div class="list-group packages" id=common-packages>
+                <div class="row">
+                    <div class="col-md-8">
+                    {% if list_article %}
+                        {% for article in list_article %}
+                            <div class=row>
+                                <dl class="article-card">
+                                    <dt>
+                                    <div class="user-card block size80">
+                                        <a href="/user/712808" class="avatar">
+                                            <img alt="叶明" style="width: 40px; height: 40px;" src="https://cdn.sspai.com/attachment/origin/2015/11/25/294748.jpg?imageMogr2/quality/95/thumbnail/!80x80r/gravity/Center/crop/80x80" lazy="loaded">
+                                        </a>
+                                        <h4>
+                                            <a href="/user/712808" class="nametype" >{{ article.author }}</a>
+                                        </h4>
+                                        <time class="retweet">
+                                            3小时前<span><span>推荐</span></span>
+                                        </time>
+                                    </div>
+                                    <div class="more">
+                                        <span>
+                                            <div class="el-popover" style="width: 110px; display: none;">
+                                                <ul class="tooltip-nav">
+                                                    <li><a href="javascript:;">收藏</a></li>
+                                                    <li><a href="javascript:;">举报</a></li>
+                                                </ul>
+                                                <div class="el-dialog__wrapper report-dialog" style="display: none;">
+                                                    <div class="el-dialog el-dialog--tiny" style="top: 15%;">
+                                                        <div class="el-dialog__header">
+                                                            <span class="el-dialog__title">举报</span>
+                                                            <div class="el-dialog__headerbtn">
+                                                                <i class="el-dialog__close el-icon el-icon-close"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <span class="icon i-more"></span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    </dt>
+                                    <dd>
+                                        <a href="/post/40264" class="banner">
+                                            <img alt="仅需一分钟，轻松打造 iPhone 壁纸级别的照片" src="https://cdn.sspai.com/article/a504943a-7a6b-facc-bfcf-2a88cf80f709.jpg?imageMogr2/quality/95/thumbnail/!1440x480r/gravity/Center/crop/1440x480" lazy="loaded">
+                                        </a>
+                                        <section>
+                                            <h3 class="title">
+                                                <a href="/post/40264" class="">{{ article.title }}</a>
+                                            </h3>
+                                            <summary class="desc">{{ article.content }}</summary>
+                                        </section>
+                                        <footer class="meta">
+                                            <div class="actions">
+                                                <span class="like-views">
+                                                    <i class="icon i-like"></i><sup>10</sup>
+                                                </span>
+                                                <a href="javascript:;" class="btn-comment">
+                                                    <i class="icon i-comment"></i><sup>3</sup>
+                                                </a>
+                                            </div>
+                                        </footer>
+                                    </dd>
+                                </dl>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                        <div class=row>
+                            <dl class="article-card">
+                                <dt>
+                                <div class="user-card block size80">
+                                    <a href="/user/712808" class="avatar">
+                                        <img alt="叶明" style="width: 40px; height: 40px;" src="https://cdn.sspai.com/attachment/origin/2015/11/25/294748.jpg?imageMogr2/quality/95/thumbnail/!80x80r/gravity/Center/crop/80x80" lazy="loaded">
+                                    </a>
+                                    <h4>
+                                        <a href="/user/712808" class="nametype">叶明</a>
+                                    </h4>
+                                    <time class="retweet">
+                                        3小时前<span><span>推荐</span></span>
+                                    </time>
+                                </div>
+                                <div class="more">
+                                    <span>
+                                        <div class="el-popover" style="width: 110px; display: none;">
+                                            <ul class="tooltip-nav">
+                                                <li><a href="javascript:;">收藏</a></li>
+                                                <li><a href="javascript:;">举报</a></li>
+                                            </ul>
+                                            <div class="el-dialog__wrapper report-dialog" style="display: none;">
+                                                <div class="el-dialog el-dialog--tiny" style="top: 15%;">
+                                                    <div class="el-dialog__header">
+                                                        <span class="el-dialog__title">举报</span>
+                                                        <div class="el-dialog__headerbtn">
+                                                            <i class="el-dialog__close el-icon el-icon-close"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:;">
+                                            <span class="icon i-more"></span>
+                                        </a>
+                                    </span>
+                                </div>
+                                </dt>
+                                <dd>
+                                    <a href="/post/40264" class="banner">
+                                        <img alt="仅需一分钟，轻松打造 iPhone 壁纸级别的照片" src="https://cdn.sspai.com/article/a504943a-7a6b-facc-bfcf-2a88cf80f709.jpg?imageMogr2/quality/95/thumbnail/!1440x480r/gravity/Center/crop/1440x480" lazy="loaded">
+                                    </a>
+                                    <section>
+                                        <h3 class="title">
+                                            <a href="/post/40264" class="">仅需一分钟，轻松打造 iPhone 壁纸级别的照片</a>
+                                        </h3>
+                                        <summary class="desc">今天通过视频的方式来教大家如何快速地把照片修出 iPhone 壁纸的感觉。</summary>
+                                    </section>
+                                    <footer class="meta">
+                                        <div class="actions">
+                                            <span class="like-views">
+                                                <i class="icon i-like"></i><sup>10</sup>
+                                            </span>
+                                            <a href="javascript:;" class="btn-comment">
+                                                <i class="icon i-comment"></i><sup>3</sup>
+                                            </a>
+                                        </div>
+                                    </footer>
+                                </dd>
+                            </dl>
+                        </div>
+                        <a href="/all/" class="package list-group-item all-packages" target="_blank">all info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="list-group packages" id=search-results style="display: none"></div>
+        </div>
+    </main>
+    <footer id=footer class="footer hidden-print">
+        <div class=container>
+            <div class=row>
+                <div class="footer-about col-md-5 col-sm-12" id=about><h4>关于 本站</h4>
+{#                    <p>BootCDN 是 <a href="http://www.bootcss.com/" target="_blank">Bootstrap中文网</a>和#}
+{#                        <a href="https://www.upyun.com/" target="_blank">又拍云</a>共同支持并维护的前端开源项目免费#}
+{#                        CDN 服务，由<a href="https://www.upyun.com/" target="_blank">又拍云</a>提供全部#}
+{#                        CDN 支持，致力于为 Bootstrap、jQuery、Angular 一样优秀的前端开源项目提供稳定、快速的免费 CDN 加速服务。BootCDN 所收录的开源项目主要同步于#}
+{#                        <a href="https://github.com/cdnjs/cdnjs" target="_blank">cdnjs</a> 仓库。#}
+{#                    </p>#}
+{#                    <p>自2013年10月31日上线以来已经为上万家网站提供了稳定、可靠的免费 CDN 加速服务。</p>#}
+{#                    <p>反馈或建议请发送邮件至：cdn@bootcss.com</p>#}
+                </div>
+                <div class="footer-links col-md-2 col-sm-12"><h4>友情链接</h4>
+                    <ul class=list-unstyled>
+                        <li><a href="http://www.bootcss.com/" target="_blank">Bootstrap中文网</a></li>
+                    </ul>
+                </div>
+                <div class="footer-techs col-md-2 col-sm-12"><h4>我们用到的技术</h4>
+                    <ul class="list-unstyled list-inline">
+                        <li><a href="http://www.bootcss.com/" target="_blank">Bootstrap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-sponsors col-md-3 col-sm-12"><h4>战略合作 &amp; CDN 提供</h4>
+                    <p>
+                        <a target="_blank" href="https://www.upyun.com/" style="border-bottom: none">云存储</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class=copy-right><span>&copy; 2013-2017</span>
+            <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a>
+            <span>京公网安备11010802014853</span>
+        </div>
+    </footer>
+    <a href="#" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+</body>
