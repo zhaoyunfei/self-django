@@ -7,6 +7,7 @@ from django.db import models
 
 
 class Category(models.Model):
+    order_number = models.IntegerField()
     category_name = models.CharField(max_length=200)
     # 好物推荐
     # 教学栏

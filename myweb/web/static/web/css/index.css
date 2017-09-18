@@ -223,10 +223,7 @@ a:hover{
     /*background-color: #27ae60;*/
     color: #fff;
     margin-bottom: 0;
-    background: url(../img/bg.jpg);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+    background: url(../img/bg.jpg) no-repeat scroll center top;
     background-size: cover;
 }
 
@@ -268,11 +265,8 @@ a:hover{
 }
 
 .site-header .search-wraper {
-    margin-left: auto;
-    margin-right: auto;
     max-width: 680px;
-    margin-top: 30px;
-    margin-bottom: 20px
+    margin: 30px auto 20px;
 }
 
 .site-header .search {
@@ -352,15 +346,14 @@ a:hover{
 }
 
 .mostused-packages ul > li a {
-    line-height: 1;
+    line-height: 2;
     color: #292525;
     text-decoration: none;
     -webkit-filter: grayscale(90%);
     filter: grayscale(90%);
-    text-decoration: none;
     display: block;
-    font-weight: 700;
-    font-size: 14px;
+    font-weight: normal;
+    font-size: 16px;
 }
 
 .mostused-packages ul > li a:hover {
@@ -406,7 +399,6 @@ dl {
 .user-card time {
     color: #9b9b9b;
     vertical-align: middle;
-    font-size: 12px;
     font-size: .75rem;
 }
 
@@ -527,7 +519,6 @@ summary {
 .article-card dd footer.meta {
     clear: both;
     margin-top: 22px;
-    font-size: 14px;
     font-size: .875rem;
     color: #9b9b9b;
 }
